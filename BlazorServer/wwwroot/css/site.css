@@ -1,0 +1,10 @@
+﻿body {
+
+}
+
+:focus-visible{
+    outline: none;
+}
+button.mud-button{
+    min-width: 20px;
+}

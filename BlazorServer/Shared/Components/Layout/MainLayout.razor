@@ -1,0 +1,37 @@
+﻿@using BlazorServer_MudBlazor.Shared.Constants;
+@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="_theme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<PageTitle>@($"{CommonConstants.ApplicationName} {CommonConstants.ApplicationVersion}")</PageTitle>
+
+<MudLayout Style="height: 100vh">
+    <MudAppBar Elevation="1" DisableGutters="true" Class="px-2">
+   @*     <MudButton OnClick="DrawerToggle" Style="height: 100%" Color="Color.Inherit">
+            <MudIcon Icon="@Icons.Material.Filled.Menu" Size="Size.Medium" />
+        </MudButton>*@
+        <MudIcon Class="mr-2" Icon="@Icons.Material.Sharp.CatchingPokemon" Size="Size.Large" />
+        <MudText Typo="Typo.h5" Class="ml-0">@CommonConstants.ApplicationName</MudText>
+        <MudSpacer />
+        <Server.Shared.Components.Authentication.LoginDisplay/>
+    </MudAppBar>
+@*    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" DisableOverlay="true"  Variant="DrawerVariant.Mini" Elevation="2">
+
+    </MudDrawer>*@
+    <MudMainContent Style="height: 100%">
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    MudTheme _theme = CustomThemes.Default;
+
+    //bool _drawerOpen = true;
+
+    //void DrawerToggle()
+    //{
+    //    _drawerOpen = !_drawerOpen;
+    //}
+}

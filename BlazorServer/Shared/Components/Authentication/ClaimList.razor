@@ -1,0 +1,17 @@
+﻿<AuthorizeView>
+    <Authorized>
+        <h1>Claims</h1>
+        @foreach (var claim in context.User.Claims)
+        {
+            <MudText Class="mt-3" Typo="Typo.h6" Style="max-width: 100%; word-wrap: break-word; white-space: pre-wrap;">@claim.Type</MudText>
+            <MudText Typo="Typo.body1" Style="max-width: 100%; word-wrap: break-word; white-space: pre-wrap;">@claim.Value</MudText>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <span>Unauthorized</span>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+
+}

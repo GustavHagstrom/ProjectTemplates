@@ -1,0 +1,13 @@
+﻿<AuthorizeView>
+    <Authorized>
+        @context.User.FindFirst("name")?.Value
+        <MudButton Class="mr-n2" Style="height: 100%" Href="MicrosoftIdentity/Account/SignOut">
+            <MudText Typo="Typo.subtitle2">Log out</MudText>
+        </MudButton>
+    </Authorized>
+    <NotAuthorized>
+        <MudButton Style="height: 100%" Href="MicrosoftIdentity/Account/SignIn">
+            <MudText Typo="Typo.subtitle2">Log in</MudText>
+        </MudButton>
+    </NotAuthorized>
+</AuthorizeView>
